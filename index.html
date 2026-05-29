@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | 小松高校理数科 天文数学同好会</title>
+    <title>ストリートファイター6 | 最新格闘ゲームの魅力を体感せよ</title>
     <style>
         /* 全体のリセットと基本設定 */
         * {
@@ -12,201 +12,231 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f9;
+            font-family: 'Impact', 'Arial Black', 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', sans-serif;
+            background-color: #0a0a0c;
+            color: #ffffff;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ヘッダー */
-        header {
-            background-color: #0f2027;
-            background: linear-gradient(to right, #203a43, #0f2027);
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-        header p {
-            font-size: 1.1rem;
-            color: #00d2ff;
-            font-weight: bold;
-        }
-
-        /* メインコンテナ */
+        
+        /* 共通コンテナ */
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* セクション共通 */
-        section {
-            background: #fff;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        /* ヒーローセクション（メインビジュアル風） */
+        .hero {
+            background: linear-gradient(135deg, #141519 0%, #0b0c10 100%);
+            position: relative;
+            padding: 120px 0 80px 0;
+            text-align: center;
+            border-bottom: 4px solid #ff0055;
         }
-        h2 {
-            font-size: 1.5rem;
-            color: #203a43;
-            border-left: 5px solid #00d2ff;
-            padding-left: 15px;
-            margin-bottom: 20px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, rgba(0,210,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
-
-        /* プロフィール（一言） */
-        .intro-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-        .intro-text {
-            flex: 1;
-        }
-        .tag {
-            display: inline-block;
-            background-color: #e6f7ff;
-            color: #1890ff;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-right: 10px;
+        .hero-tag {
+            font-size: 1.2rem;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
             margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
+            background: linear-gradient(to right, #ffffff, #ff0055);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: 1.4rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+        }
+        
+        /* プラットフォームバッジ */
+        .platform-box {
+            display: inline-flex;
+            gap: 15px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .badge {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #00d2ff;
         }
 
-        /* グリッドレイアウト（活動・趣味） */
+        /* 特徴セクション */
+        .features {
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+            letter-spacing: 2px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #00d2ff;
+            margin: 15px auto 0 auto;
+        }
+        
+        /* グリッドレイアウト */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         .card {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 6px;
-            padding: 20px;
-            transition: transform 0.2s;
+            background: #111216;
+            border: 1px solid #22252a;
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+            border-color: #00d2ff;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: #00d2ff;
+        }
+        .card.alt::before {
+            background: #ff0055;
         }
         .card h3 {
-            font-size: 1.2rem;
-            color: #0f2027;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .card p {
+            color: #a0a5b5;
+            font-size: 1rem;
         }
 
-        /* リストスタイル */
-        ul {
-            list-style-type: none;
+        /* 特大ハイライトセクション */
+        .highlight-section {
+            background: linear-gradient(180deg, #111216 0%, #0a0a0c 100%);
+            padding: 100px 0;
+            border-top: 1px solid #22252a;
         }
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
+        .highlight-box {
+            background: linear-gradient(135deg, #ff0055 0%, #990033 100%);
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 0, 85, 0.3);
         }
-        ul li::before {
-            content: "■";
-            position: absolute;
-            left: 0;
-            color: #00d2ff;
-            font-size: 0.8rem;
-            top: 2px;
+        .highlight-box h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .highlight-box p {
+            font-size: 1.3rem;
+            color: #ffe6ee;
+            font-weight: bold;
         }
 
         /* フッター */
         footer {
+            background: #050507;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px 20px;
-            color: #888;
+            color: #555964;
             font-size: 0.9rem;
-            background-color: #0f2027;
-            color: #fff;
-            margin-top: 60px;
+            border-top: 1px solid #111216;
         }
 
-        /* レスポンシブ対応 */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .intro-box { flex-direction: column; text-align: center; }
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero-sub { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            .highlight-box { padding: 30px 20px; }
+            .highlight-box h2 { font-size: 2rem; }
+            .highlight-box p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>PORTFOLIO</h1>
-        <p>小松高校理数科 / 天文数学同好会2年</p>
-    </header>
-
-    <div class="container">
-
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="intro-box">
-                <div class="intro-text">
-                    <div class="tags">
-                        <span class="tag">理数科</span>
-                        <span class="tag">天文数学同好会</span>
-                        <span class="tag">大聖寺生まれ</span>
-                    </div>
-                    <p style="margin-top: 15px;">
-                        大聖寺生まれの高校2年生です。現在は小松高校の理数科に在籍し、天文数学同好会で活動しています。
-                        勉強が得意な一方、運動能力は並くらいですが、身体を動かすことやスポーツのバックグラウンドもあります。
-                        地元である大聖寺高校のメンツとは、今でもとても仲が良く、大切な友人たちです。
-                    </p>
-                </div>
+    <section class="hero">
+        <div class="container">
+            <p class="hero-tag">格闘ゲームの最新作</p>
+            <h1>ストリートファイター6</h1>
+            <p class="hero-sub">新たな時代へ突き進む、最高峰の対戦格闘体験</p>
+            
+            <div class="platform-box">
+                <span class="badge">PS5</span>
+                <span style="color: #444;">|</span>
+                <span class="badge">Switch2</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="academic">
-            <h2>Academic & Tech</h2>
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">GAME FEATURES</h2>
+            
             <div class="grid">
                 <div class="card">
-                    <h3><span>📊</span> 競技数学</h3>
-                    <p>同好会や日々の学習を通じて、数学の美しさと奥深さを探求中。難問に挑戦するスリルを楽しんでいます。</p>
+                    <h3>究極のバトルシステム</h3>
+                    <p>緻密なコンボや熱い駆け引きなど、プレイヤーの閃きと技術が交錯する様々な面白さが詰まっています。</p>
                 </div>
+                
+                <div class="card alt">
+                    <h3>多彩なキャラクター</h3>
+                    <p>個性に溢れるキャラクターバラエティに加え、世界をさらに広げる魅力的なDLCも続々と登場。</p>
+                </div>
+                
                 <div class="card">
-                    <h3><span>💻</span> 競技プログラミング</h3>
-                    <p>アルゴリズムと効率的なコードで問題を解決する、競技プログラミング（競プロ）の勢力として活動しています。</p>
+                    <h3>熱狂のランクバトル</h3>
+                    <p>世界中のライバルたちと競い合い、自らの実力を証明するランクバトルこそが本作の醍醐味です。</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="interests">
-            <h2>Sports & Interests</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3><span>🏓</span> スポーツ経歴</h3>
-                    <p>小学校時代には<strong>サッカー</strong>と<strong>水泳</strong>で基礎体力を養い、中学校では<strong>卓球部</strong>に所属して汗を流していました。</p>
-                </div>
-                <div class="card">
-                    <h3><span>⚾</span> 最近の趣味</h3>
-                    <p>最近は<strong>プロ野球観戦</strong>にどっぷりはまっています。スタッツやデータを分析しながら観るのも楽しみの一つです。</p>
-                </div>
+    <section class="highlight-section">
+        <div class="container">
+            <div class="highlight-box">
+                <h2>賞金 1,000億円の大会も開催！</h2>
+                <p>破格のスケールで繰り広げられる、世界最高峰の戦いに挑戦せよ。</p>
             </div>
-        </section>
-
-    </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 小松高校理数科 天文数学同好会2年 ポートフォリオ</p>
+        <p>&copy; 2026 STREET FIGHTER 6 LP Fan Page. All rights reserved.</p>
     </footer>
 
 </body>
